@@ -10,7 +10,7 @@ When answering BBEdit questions, prefer the manual over memory. If a feature, me
 
 ## Looking things up in the manual (do this first)
 
-Never re-download or re-parse the PDF per question. The manual is converted once into searchable text in `manual/text/` (git-ignored-style cache; regenerate with `manual/build.sh`).
+Never re-download or re-parse the PDF per question. The manual is converted once into searchable text in `manual/text/` (git-ignored cache; regenerate with `manual/build.sh`).
 
 - `manual/search.sh <regex>` — case-insensitive search; prints `p.<page>: <line>` hits.
 - `manual/search.sh -p <page> [<last page>]` — print full page(s) once you know where to look.
@@ -54,8 +54,12 @@ The User Manual is the primary source. Consult other internet sources only when 
 
 - `notes/` — findings and tips, one topic per Markdown file (e.g. `grep-patterns.md`, `multi-file-search.md`, `text-factories.md`, `shell-integration.md`).
 - `snippets/` — drafts of clippings, text filters, and scripts before they are installed into `./BBEdit/`.
-- `manual/` — extracted text/notes from the User Manual (keep the PDF out of version control; not a git repo currently).
+- `manual/` — extracted text/notes from the User Manual. The PDF (`manual/pdf/`), text cache (`manual/text/`), and compiled `manual/tools/extract` are git-ignored.
 
 ## Topics of interest
 
 Areas worth exploring, roughly in order of payoff: Grep/pattern matching and Multi-File Search & Replace; Text Factories and Process Lines Containing; Clippings and Text Filters; shell worksheets and scratchpad; the command-line tools; AppleScript/shell scripting and automation; project/folder browsing and disk browser; code folding, function navigation, and language-aware features; Markdown preview and HTML tools; compare/merge (`bbdiff`); Git integration; multi-cursor/rectangular selection; Preferences tuning and keyboard shortcuts.
+
+## Version control
+
+This folder is a git repository (local only, no remote). `.gitignore` excludes the `BBEdit` symlink (live user config — never commit it), `manual/pdf/`, `manual/text/`, `manual/tools/extract`, `scratch/`, and `.DS_Store`. Commit only when the user asks.
