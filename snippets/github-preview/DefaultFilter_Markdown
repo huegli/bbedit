@@ -1,0 +1,4 @@
+#!/bin/zsh
+# BBEdit preview filter: Markdown (stdin) -> GitHub-flavored HTML (stdout).
+# Uses absolute path because GUI apps don't inherit the shell PATH.
+exec /opt/homebrew/bin/cmark-gfm --unsafe --smart -e table -e strikethrough -e autolink -e tasklist -e tagfilter

@@ -1,0 +1,13 @@
+# macOS
+.DS_Store
+
+# Symlink to live BBEdit Application Support (user config — never commit)
+/BBEdit
+
+# Manual: PDF is copyrighted/large; text is a regenerable cache (manual/build.sh)
+/manual/pdf/
+/manual/text/
+/manual/tools/extract
+
+# Throwaway test files
+/scratch/
